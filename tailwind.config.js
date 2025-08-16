@@ -10,6 +10,16 @@ export default {
         merriweather: ["Merriweather", "serif"],
         roboto: ["Roboto", "sans-serif"],
       },
+      colors: {
+        primaryColor: "#008080",
+        customGray: "#6B6B6B",
+      },
+      fontSize: {
+        h1: "48px",
+        h2: "32px",
+        h3: "24px",
+        nav: "20px",
+      },
     },
   },
   plugins: [],
