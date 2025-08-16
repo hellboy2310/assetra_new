@@ -45,7 +45,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="absolute top-[100px] left-0 px-10 w-full bg-white md:hidden shadow-lg border-t-2">
+        <div className="absolute top-[100px] left-0 px-10 w-full bg-white md:hidden z-10 shadow-lg border-t-2" >
           <ul className="flex flex-col text-left text-nav">
             {navItems.map((item, idx) => (
               <li key={item.name} className="border-b last:border-none">

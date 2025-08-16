@@ -13,9 +13,10 @@ export default {
       colors: {
         primaryColor: "#008080",
         customGray: "#6B6B6B",
+        white: "#FAFAFA"
       },
       fontSize: {
-        h1: "48px",
+        h1: "56px",
         h2: "32px",
         h3: "24px",
         nav: "20px",
