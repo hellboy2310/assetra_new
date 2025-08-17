@@ -18,6 +18,7 @@ export default {
       fontSize: {
         h1: "56px",
         h2: "32px",
+        h4:"30px",
         h3: "24px",
         nav: "20px",
       },
