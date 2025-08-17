@@ -36,8 +36,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-primaryColor/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
 
-            /////statistics sectioin
-            <div className="absolute  w-full md:h-[250px]  flex flex-col md:flex-row items-center justify-center z-10 bg-white space-y-12 md:space-y-0 md:space-x-[5%] rounded-xl shadow-lg p-4 md:p-0">
+            <div className="w-full md:h-[250px]  flex flex-col md:flex-row items-center justify-center z-10 bg-white space-y-12 md:space-y-0 md:space-x-[5%] rounded-xl shadow-lg p-4 md:p-0">
                 <div className="flex flex-col items-center space-y-2">
                     <h1 className="text-h4 text-primaryColor">85+</h1>
                     <p>Clients Globally</p>
@@ -59,6 +58,29 @@ const Home = () => {
                     <p>Paperless Commitment</p>
                 </div>
             </div>
+
+
+            <div className="h-650 w-full flex flex-col items-center justify-center md:flex-row md:items-start md:justify-center space-x-0 p-[10px] md:space-x-20 my-10 md:my-40">
+                <div>
+                    <img className="w-[400px] h-[350px]" src="/assets/aboutus.png" alt="About Us" />
+                </div>
+                <div className="space-y-5 p-[20px] md:p-[0px] mt-10 md:mt-0 text-center md:text-left">
+                    <h1 className="text-h3 text-primaryColor">ABOUT US</h1>
+                    <div className="space-y-4 max-w-[620px] pr-0 md:pr-10">
+                        <p className="font-roboto font-light text-18">
+                            Welcome to ASSETra, a leading business consulting firm operating globally.
+                            Our expert team helps businesses achieve sustainable growth with tailored
+                            strategies.
+                        </p>
+                        <p className="font-roboto font-light text-18">
+                            We specialize in innovation & expertise, ensuring high-impact results. At
+                            ASSETra, we drive businesses forward with smart solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
 
         </>
 
