@@ -13,12 +13,13 @@ export default {
       colors: {
         primaryColor: "#008080",
         customGray: "#6B6B6B",
-        white: "#FAFAFA"
+        white: "#FAFAFA",
+        lightGrayBg: "#F4F6F7",
       },
       fontSize: {
         h1: "56px",
         h2: "32px",
-        h4:"30px",
+        h4: "30px",
         h3: "24px",
         nav: "20px",
       },

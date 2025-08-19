@@ -1,3 +1,4 @@
+import ServicesGrid from '../common/ServicesGrid';
 
 
 const Home = () => {
@@ -79,6 +80,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <ServicesGrid/>
 
 
 
