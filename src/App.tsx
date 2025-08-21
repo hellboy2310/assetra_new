@@ -6,6 +6,7 @@ import About from "./components/About";
 import Team from './components/Team';
 
 
+
 function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -14,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/team" element={<Team/>}/>
+        <Route path="/team" element={<Team />} />
       </Routes>
     </div>
   );

@@ -13,8 +13,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white text-gray-900 h-[100px] flex items-center justify-between px-6 md:px-[120px] shadow-sm">
-      <h2 className="text-h2 text-primaryColor">ASSETra</h2>
+    <nav className="sticky top-0 z-50 bg-white text-gray-900 h-[60px] md:h-[100px] flex items-center justify-between px-6 md:px-[120px] shadow-sm">
+      <h2 className="md:text-h2 text-h4 text-primaryColor">ASSETra</h2>
 
       {/* Desktop Nav */}
       <ul className="hidden md:flex space-x-10 text-nav">
@@ -36,7 +36,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden"
+        className="md:hidden z-50"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
@@ -45,9 +45,9 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="absolute top-[100px] left-0 px-10 w-full h-full bg-white md:hidden z-10 shadow-lg border-t-2" >
+        <div className="fixed inset-0 top-[60px] bg-white md:hidden z-40 flex flex-col px-10 pt-6 shadow-lg">
           <ul className="flex flex-col text-left text-nav">
-            {navItems.map((item, idx) => (
+            {navItems.map((item) => (
               <li key={item.name} className="border-b last:border-none">
                 <NavLink
                   to={item.path}
