@@ -15,6 +15,8 @@ export default {
         customGray: "#6B6B6B",
         white: "#FAFAFA",
         lightGrayBg: "#F4F6F7",
+        blackfont: '#202020',
+        blackDiffType: '#212121',
       },
       fontSize: {
         h1: "56px",
@@ -22,6 +24,7 @@ export default {
         h3: "30px",
         h4: "28px",
         h5: "24px",
+        medSmall: "18px",
         small:'16px',
         nav: "20px",
       },
