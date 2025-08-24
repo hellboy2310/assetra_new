@@ -218,22 +218,17 @@ const Home = () => {
 
 
 
-                        {/* Content Section */}
                         <div className="w-full md:w-3/5 lg:w-3/5 flex flex-col justify-center space-y-6 sm:space-y-6 md:space-y-20 lg:space-y-24">
-                            {/* Testimonial Text Box */}
                             <div className="relative">
-                                {/* Mobile: Simple text, Tablet+: Bordered box */}
                                 <div className=" items-start justify-center   sm:bg-white ">
                                     <p className="text-sm sm:text-base md:text-base lg:text-lg text-blackDiffType font-normal leading-7 sm:leading-8 text-center md:text-left">
                                         "I can't thank [Law Firm Name] enough for their professionalism and dedication. From the first consultation, they made me feel heard and supported. My attorney walked me through every step of the process and fought tirelessly to achieve a favorable outcome. I highly recommend them to anyone looking for knowledgeable and compassionate legal representation."
                                     </p>
                                 </div>
 
-                                {/* Quote indicator - bottom right of box (tablet+) */}
 
                             </div>
 
-                            {/* Author Info */}
                             <div className="text-center md:text-left space-y-1 mt-6 md:mt-8">
                                 <div className="flex items-center justify-center md:justify-start space-x-3 flex-wrap">
                                     <h3 className="text-lg sm:text-xl md:text-xl lg:text-2xl text-primaryColor font-bold">
