@@ -191,11 +191,11 @@ const Home = () => {
 
             </section>
 
-            <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
+            <section className="w-full py-16 sm:py-16 md:py-20 lg:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header Section */}
-                    <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 md:mb-20">
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primaryColor font-bold">
+                    <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 md:mb-24">
+                        <h1 className="text-h3 text-primaryColor font-bold">
                             CLIENT TESTIMONIALS
                         </h1>
                         <p className="text-sm sm:text-base md:text-lg text-blackDiffType font-light max-w-xl lg:max-w-2xl px-4">
