@@ -1,11 +1,15 @@
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Icon } from 'lucide-react';
 import { Typewriter } from 'react-simple-typewriter';
-import { statsData } from '../utils/constants';
+import { SERVICES_DATA, statsData } from '../utils/constants';
 import { useState } from 'react';
 
 
 const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+    const totalDots = 6;
+
+
 
     const handlePrev = () => {
         setCurrentIndex((prev) => (prev === 0 ? statsData.length - 1 : prev - 1));
@@ -15,7 +19,16 @@ const Home = () => {
         setCurrentIndex((prev) => (prev === statsData.length - 1 ? 0 : prev + 1));
     };
 
+    const handlePrevService = () => {
+        setCurrentServiceIndex((prev) => (prev - 1 + totalDots) % totalDots);
+    };
+
+    const handleNextServices = () => {
+        setCurrentServiceIndex((prev) => (prev + 1) % totalDots);
+    };
+
     const currentStat = statsData[currentIndex];
+    const currentServiceStat = SERVICES_DATA[currentServiceIndex];
 
 
     return (
@@ -83,7 +96,7 @@ const Home = () => {
                             <img className='w-full h-auto object-cover rounded-lg shadow-md' src='assets/aboutus.png' />
                         </div>
                         <div className='w-full md:w-3/5 flex flex-col justify-center items-center md:items-start space-y-4 text-center md:text-left'>
-                            <h1 className='text-h3 text-primaryColor'>ABOUT US</h1>
+                            <h1 className='text-h3 text-primaryColor font-bold'>ABOUT US</h1>
                             <p className='text-medSmall text-blackDiffType font-light leading-relaxed'>
                                 Welcome to ASSETra, a leading business consulting firm operating globally. Our expert team helps businesses achieve sustainable growth with tailored strategies.
                             </p>
@@ -95,6 +108,88 @@ const Home = () => {
                 </div>
             </section>
 
+            <section className="  w-full  bg-lightGrayBg py-16 sm:py-20 md:py-24 space-y-8 sm:space-y-12">
+                {/* Heading */}
+                <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl text-primaryColor font-bold">
+                        OUR SERVICES
+                    </h1>
+                    <p className="text-medSmall px-6 pb-12 sm:pb-0 sm:text-base text-blackDiffType font-light max-w-xl">
+                        For years we help people to solve their legal problems in such areas are
+                    </p>
+                </div>
+
+                {/* Cards */}
+                <div className="hidden sm:grid max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-12 lg:px-24 xl:px-56 
+                  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-9">
+                    {SERVICES_DATA.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <div
+                                key={item.id}
+                                className={`flex flex-col h-full w-full rounded-xl border shadow-md ${item.bgColor} 
+                transition-shadow duration-300 hover:shadow-xl`}
+                            >
+                                <div className={`w-16 h-16 flex items-center justify-center bg-primaryColor/20 rounded-br-3xl ${item.bgColor} ${item.iconColor}`}>
+                                    <Icon className="w-6 h-6 " />
+                                </div>
+                                <h3 className="px-6 text-lg py-4 sm:text-xl font-semibold text-black py-2">
+                                    {item.title}
+                                </h3>
+                                <p className="px-6 text-sm py-2 sm:text-base text-blackDiffType font-light mb-4">
+                                    {item.description}
+                                </p>
+                                <button
+                                    aria-label={`Learn more about ${item.title}`}
+                                    className="mt-auto pb-3 pr-4 w-full flex justify-end items-center gap-2 text-primaryColor font-medium hover:underline"
+                                >
+                                    <ArrowRight className="w-5 h-5" />
+                                </button>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* section of services_data in mobile */}
+                <div className='md:hidden lg:hidden'>
+                    <div className='px-3 '>
+                        <div
+                            key={currentServiceStat.id}
+                            className={`flex flex-col  h-full w-full rounded-xl border shadow-md ${currentServiceStat.bgColor} 
+                      transition-shadow duration-300 hover:shadow-xl`}
+                        >
+                            <div className={`w-16 h-16 flex  items-center justify-center bg-primaryColor/20 rounded-br-3xl rounded-tl-xl ${currentServiceStat.bgColor} ${currentServiceStat.iconColor}`}>
+                                <currentServiceStat.icon className="w-6 h-6 " />
+                            </div>
+                            <h3 className="px-6 text-lg py-4 sm:text-xl font-semibold text-black ">
+                                {currentServiceStat.title}
+                            </h3>
+                            <p className="px-6 text-sm py-2 sm:text-base text-blackDiffType font-light mb-4">
+                                {currentServiceStat.description}
+                            </p>
+                            <button
+                                aria-label={`Learn more about ${currentServiceStat.title}`}
+                                className="mt-auto pb-3 pr-4 w-full flex justify-end items-center gap-2 text-primaryColor font-medium hover:underline"
+                            >
+                                <ArrowRight className="w-5 h-5" />
+                            </button>
+                        </div>
+                    </div>
+                    <div className='py-16  pb-3 sm:pb-0 flex flex-row justify-between px-4'>
+                        <button className='w-10 h-10 text-primaryColor rounded-full border border-primaryColor flex items-center justify-center hover:bg-primaryColor/30 hover:text-white transition' onClick={handlePrevService}><ArrowLeft /></button>
+                        <div className='space-x-2'>{[...Array(totalDots)].map((_, index) => (
+                            <button
+                                key={index}
+                                className={`w-3 h-3 rounded-full transition ${index === currentServiceIndex ? "bg-primaryColor" : "bg-gray-200"
+                                    }`}
+                            />
+                        ))}</div>
+                        <button className='w-10 h-10 rounded-full border border-primaryColor flex items-center  justify-center text-primaryColor hover:bg-primaryColor/30 hover:text-white transition' onClick={handleNextServices}><ArrowRight /></button>
+
+                    </div>
+                </div>
+
+            </section>
 
 
 
