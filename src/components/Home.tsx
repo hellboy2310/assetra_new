@@ -1,13 +1,18 @@
-import { ArrowRight, ArrowLeft, Icon } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Icon, MapPin, Phone, Mail } from 'lucide-react';
 import { Typewriter } from 'react-simple-typewriter';
 import { SERVICES_DATA, statsData } from '../utils/constants';
 import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { ContactItem, InputField } from '../common/ContactItem';
 
 
 const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
     const totalDots = 6;
+    const { register, handleSubmit } = useForm<IFormInput>()
+    const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data)
+
 
 
 
@@ -243,6 +248,109 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <section className="w-full bg-lightGrayBg py-20 sm:py-20 lg:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+
+                    {/* Header Section */}
+                    <div className="flex flex-col items-center text-center space-y-4 mb-16 md:mb-24">
+                        <h1 className="text-h3 text-primaryColor font-bold">CONTACT US</h1>
+                        <p className="text-sm sm:text-base md:text-lg text-blackDiffType font-light max-w-xl lg:max-w-2xl">
+                            Join the ranks of our satisfied clients and take control of your financial future today.
+                            Schedule your free consultation.
+                        </p>
+                    </div>
+
+                    <div className="w-full flex flex-col-reverse md:flex-row gap-12">
+
+                        {/* Contact Info */}
+                        <div className="w-full md:w-2/5 space-y-20 pt-6">
+                            <h2 className="text-h6 lg:text-h4 text-primaryColor font-bold font-roboto pt-6">CONTACT INFORMATION</h2>
+
+                            <ContactItem
+                                icon={Mail}
+                                title="Email"
+                                value="assetfree@gmail.com"
+                                withBorder
+                            />
+
+                            <ContactItem
+                                icon={Phone}
+                                title="Mobile"
+                                value="+91 7348237839"
+                                withBorder
+                            />
+
+                            <ContactItem
+                                icon={MapPin}
+                                title="Address"
+                                value={`472 Maple Hollow Drive, Brookside, OH\n43025, United States`}
+                                withBorder={undefined} />
+                        </div>
+
+                        {/* Contact Form */}
+                        <div className="w-full md:w-3/5 bg-white rounded-2xl shadow-md p-8">
+                            <h2 className="text-h6 lg:text-h4 text-primaryColor font-bold font-roboto pt-4 text-center md:text-left">
+                                GET IN TOUCH
+                            </h2>
+                            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 mt-6">
+
+                                {/* First & Last Name */}
+                                <div className="flex flex-col md:flex-row gap-4">
+                                    <InputField
+                                        id="firstName"
+                                        label="First Name"
+                                        placeholder="Enter first name"
+                                        register={register("firstName", { required: true, maxLength: 20 })}
+                                    />
+                                    <InputField
+                                        id="lastName"
+                                        label="Last Name"
+                                        placeholder="Enter last name"
+                                        register={register("lastName", { pattern: /^[A-Za-z]+$/i })}
+                                    />
+                                </div>
+
+                                {/* Email */}
+                                <InputField
+                                    id="email"
+                                    label="Email Address"
+                                    placeholder="Enter email"
+                                    register={register("email", {
+                                        required: "Email is required",
+                                        pattern: {
+                                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                            message: "Please enter a valid email address"
+                                        }
+                                    })}
+                                />
+
+                                {/* Service */}
+                                <InputField
+                                    id="service"
+                                    label="Service"
+                                    placeholder="Enter service"
+                                    register={register("service", { required: true })}
+                                />
+
+                                {/* Submit */}
+                                <div className='pt-4  flex items-center justify-center md:items-start md:justify-start'>
+                                    <button
+                                        type="submit"
+                                        className="bg-primaryColor text-white rounded-lg py-3 px-10 font-medium hover:bg-primaryColor/90 transition-colors self-start"
+                                        aria-label="Submit contact form"
+                                    >
+                                        Send Message
+                                    </button>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
 
 
