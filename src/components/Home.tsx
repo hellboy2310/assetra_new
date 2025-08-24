@@ -191,6 +191,64 @@ const Home = () => {
 
             </section>
 
+            <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Header Section */}
+                    <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 md:mb-20">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primaryColor font-bold">
+                            CLIENT TESTIMONIALS
+                        </h1>
+                        <p className="text-sm sm:text-base md:text-lg text-blackDiffType font-light max-w-xl lg:max-w-2xl px-4">
+                            For years we help people to solve their legal problems in such areas are
+                        </p>
+                    </div>
+
+                    {/* Testimonial Content */}
+                    <div className="flex flex-col md:flex-row items-start gap-8 sm:gap-10 md:gap-8 lg:gap-16 xl:gap-20">
+                        {/* Image Section */}
+                        <div className="w-full md:w-2/5 lg:w-2/5 flex-shrink-0 overflow-hidden">
+                            <div className="mx-auto max-w-sm md:max-w-none">
+                                <img
+                                    className="w-full aspect-[413/354] object-contain rounded-tl-[30%] rounded-br-[30%] shadow-md bg-primaryColor"
+                                    src="assets/testimonial.png"
+                                    alt="Christian Walker - E Commerce Specialist testimonial"
+                                />
+                            </div>
+                        </div>
+
+
+
+                        {/* Content Section */}
+                        <div className="w-full md:w-3/5 lg:w-3/5 flex flex-col justify-center space-y-6 sm:space-y-6 md:space-y-20 lg:space-y-24">
+                            {/* Testimonial Text Box */}
+                            <div className="relative">
+                                {/* Mobile: Simple text, Tablet+: Bordered box */}
+                                <div className=" items-start justify-center   sm:bg-white ">
+                                    <p className="text-sm sm:text-base md:text-base lg:text-lg text-blackDiffType font-normal leading-7 sm:leading-8 text-center md:text-left">
+                                        "I can't thank [Law Firm Name] enough for their professionalism and dedication. From the first consultation, they made me feel heard and supported. My attorney walked me through every step of the process and fought tirelessly to achieve a favorable outcome. I highly recommend them to anyone looking for knowledgeable and compassionate legal representation."
+                                    </p>
+                                </div>
+
+                                {/* Quote indicator - bottom right of box (tablet+) */}
+
+                            </div>
+
+                            {/* Author Info */}
+                            <div className="text-center md:text-left space-y-1 mt-6 md:mt-8">
+                                <div className="flex items-center justify-center md:justify-start space-x-3 flex-wrap">
+                                    <h3 className="text-lg sm:text-xl md:text-xl lg:text-2xl text-primaryColor font-bold">
+                                        - Christian Walker,
+                                    </h3>
+                                </div>
+                                <p className="text-sm sm:text-base md:text-base text-blackDiffType font-light opacity-80">
+                                    E Commerce Specialist
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
 
         </>
