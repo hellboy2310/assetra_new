@@ -6,6 +6,12 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { ContactItem, InputField } from '../common/ContactItem';
 
 
+interface IFormInput {
+    email: string;
+    firstName: string;
+    lastName: string;
+}
+
 const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
