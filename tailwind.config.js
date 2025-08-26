@@ -25,6 +25,8 @@ export default {
         h4: "28px",
         h5: "24px",
         h6: "20px",
+        h7: "36px",
+        h8: "38px",
         medSmall: "18px",
         small:'16px',
         verySmall: '14px',
