@@ -18,6 +18,9 @@ export default {
         blackfont: '#202020',
         blackDiffType: '#212121',
       },
+      letterSpacing: {
+        '2p': '0.02em', // custom utility for ~2% letter spacing
+      },
       fontSize: {
         h1: "56px",
         h2: "32px",
@@ -28,7 +31,7 @@ export default {
         h7: "36px",
         h8: "38px",
         medSmall: "18px",
-        small:'16px',
+        small: '16px',
         verySmall: '14px',
         nav: "20px",
       },
